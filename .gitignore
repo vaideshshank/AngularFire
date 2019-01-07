@@ -1,0 +1,8 @@
+# ignore all logs
+
+**/logs
+**node_modules
+/Angextras.txt
+/nodetheory.txt
+/pug.txt
+

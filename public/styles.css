@@ -1,0 +1,40 @@
+body{
+    background-image:url(../images/back.jpg);
+    background-attachment: fixed;
+}
+
+nav{
+    background: transparent;
+}
+
+.title{
+    font-family: comic sans ms;
+    font-size:25px;
+    text-align: center;
+}
+
+.input-field{
+    
+    text-align: center;
+}
+
+.input-filed>div{
+    
+    display: block;
+    margin:0 auto;
+    
+}
+
+.data{
+    color:white;
+}
+
+table{
+    height: 200px;
+    overflow: auto;
+}
+
+input[type=checkbox]
+{
+  -webkit-appearance:checkbox;
+}

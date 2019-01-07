@@ -1,0 +1,16 @@
+
+<table style="color:white; background-color:rgba(128, 128, 128, 0.479);">
+    <tr>
+        <th>S.No</th>
+        <th>City</th>
+        <th>Location</th>
+        <th>Temperature</th>
+    </tr>
+    <tr ng-repeat="data in info | orderBy : 'city'" ng-if="info!=NULL">
+        <th>{{$index+1}}</th>
+        <td>{{data.city}}</td>
+        <td>Longitude : {{data.location.longitude}} <br> Latitude : {{data.location.latitude}}</td>
+        <td>{{data.temperature}}</td>
+        <td><span style="cursor:pointer" ng-click="deleteDoc(data)">X</span></td>
+    </tr>
+</table>

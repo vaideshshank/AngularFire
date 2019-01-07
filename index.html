@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+     <!--Firebase-->
+     
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-firestore.js"></script>
+    <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyAx_ZRDSRD1nj83NJaQ2f4AREXYijQJQTs",
+                authDomain: "proj1-ad8d8.firebaseapp.com",
+                databaseURL: "https://proj1-ad8d8.firebaseio.com",
+                projectId: "proj1-ad8d8",
+                storageBucket: "proj1-ad8d8.appspot.com",
+                messagingSenderId: "105889504274"
+            };
+            firebase.initializeApp(config);
+            const db=firebase.firestore();
+            db.settings({timestampsInSnapshots:true});
+    </script>
+    
+
+
+     <!-- Compiled and minified JavaScript -->
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+
+     <!--AngularJS-->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+
+
+     <script src="/scripts.js"></script>     
+     <link rel="stylesheet" href="public/styles.css"> 
+     <script src="/services/scriptsService.js"></script>
+             
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" ng-app="weather-app">
+        <nav>   
+            <div class="nav-wrapper" class="brand-logo">
+                <a href="#">WeatherOst</a>
+                <ul class="nav-mobile right">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Check weather</a></li>
+                    <li><a href="#">History</a></li>
+                </ul>    
+            </div>
+        </nav>
+        <h2 class="title">Enter the city name to find weather</h2>
+        <div class="row">
+            <div class="col input-field l3">
+                <input type="text" id="address" class="validate" ng-model="address">
+                <label for="address">Address</label>  
+                <button class="btn waves-effect" type="Submit" ng-click="data(address)">Submit<i class="material-icons" style="margin-left:10px;line-height:10px;">send</i></button>
+                <button class="btn waves-effect" type="Submit" ng-click="clear()">Clear<i class="material-icons" style="margin-left:10px;line-height:10px;">close</i></button>
+                <span><img src="images/loading.gif" alt="" style="height:30px; width:30px; float:left" ng-show="load">
+                </span>
+            </div>
+        </div>
+        <div ng-view></div>
+    </div>
+</body>
+       
+        
+</html>
